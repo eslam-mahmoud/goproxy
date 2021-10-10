@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  goserver:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 8080:8081
+    environment:
+      LISTEN: ":8081"
+      PROVIDERS: "api.giphy.com:443,google.com:443"

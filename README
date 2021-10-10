@@ -1,0 +1,14 @@
+docker-compose up --build
+go run *.go
+
+TODO:
+handle redirect
+ex curl -p --proxy 127.0.0.1:8080 https://google.com/search?q=hello
+```
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.com/search?q=hello">here</A>.
+</BODY></HTML>
+```
