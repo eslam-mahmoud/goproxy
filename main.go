@@ -12,7 +12,7 @@ func handleReq(w http.ResponseWriter, req *http.Request) {
 	// handle onlly tunnel request
 	// only http CONNECT methods allowed
 	if req.Method != http.MethodConnect {
-		// log.Println(req.Method, req.RequestURI) // for debuging
+		log.Println(req.Method, req.RequestURI) // for debuging
 		http.NotFound(w, req)
 		return
 	}
