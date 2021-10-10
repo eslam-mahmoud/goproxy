@@ -12,3 +12,8 @@ The document has moved
 <A HREF="https://www.google.com/search?q=hello">here</A>.
 </BODY></HTML>
 ```
+
+
+## run:
+docker-compose up --build
+go run *.go
