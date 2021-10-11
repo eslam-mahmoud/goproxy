@@ -38,7 +38,7 @@ We get `requestURI` as `"api.giphy.com:443"` from `CURL`
 So prefared to use `CURL` for now
 
 ### Deploying to production
-For now I have trupple running this app to prod/staging env, all the requests fails with message like 
+For now I have trupple running this app to prod/staging env, all the requests fails with message like as nginx does not support http connect out of the box https://github.com/chobits/ngx_http_proxy_connect_module
 ```
 $ curl https://api.giphy.com/v1/gifs/search?q=morning\&api_key=231\&limit=1 -v -x https://goproxy.eslam.me
 *   Trying 157.245.246.176:443...
