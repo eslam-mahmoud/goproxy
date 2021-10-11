@@ -93,7 +93,7 @@ curl: (56) Received HTTP code 400 from proxy after CONNECT
 Using heroku
 
 ```
-$ curl https://api.giphy.com/v1/gifs/search?q=morning\&api_key=1fYKUz7KHLRa88bqR3CJeGIEXuPqNvCI\&limit=1 -v -x https://golangproxy.herokuapp.com
+$ curl https://api.giphy.com/v1/gifs/search?q=morning\&api_key=123\&limit=1 -v -x https://golangproxy.herokuapp.com
 *   Trying 54.83.6.65:443...
 * TCP_NODELAY set
 * Connected to golangproxy.herokuapp.com (54.83.6.65) port 443 (#0)
