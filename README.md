@@ -24,7 +24,7 @@ Using CURL you can send request to the app as `curl https://api.giphy.com/v1/gif
 
 ## Notes
 ### Port number
-Notice the difference in port number between running the app using go vs docker compose, this is because the app run locally on port 8081 which is configrable using env value `LISTEN` which take host:port as string ex. `:8081`
+Notice the difference in port number between running the app using go vs docker compose, this is because the app run locally on port 8081 which is configrable using env value `PORT` which take port as string ex. `8081`
 
 ### Allowed destinations
 Application have pre defined list of Allowed destinations which are giphy API & google.com which can be configered using env var `PROVIDERS` as string comma sprated strings ex `api.giphy.com:443,google.com:443`

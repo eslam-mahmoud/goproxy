@@ -17,9 +17,11 @@ var (
 
 //loadConfig read env vars to get config or use default values
 func loadConfig() {
-	// return pointer
-	listen = os.Getenv("LISTEN")
-	if listen == "" {
+	port := os.Getenv("PORT")
+	host := os.Getenv("HOST")
+	if port != "" {
+		listen = host + ":" + port
+	} else {
 		listen = defaultListen
 	}
 

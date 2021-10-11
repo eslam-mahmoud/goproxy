@@ -7,5 +7,6 @@ services:
     ports:
       - 9501:8081
     environment:
-      LISTEN: ":8081"
+      HOST: ""
+      PORT: "8081"
       PROVIDERS: "api.giphy.com:443,google.com:443"
