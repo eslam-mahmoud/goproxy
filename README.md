@@ -4,6 +4,11 @@
 Simple proxy app created using Golang to create secure tunnel
 
 ## How to launch the application
+### Run the commited build
+run `./goproxy`
+
+Using CURL you can send request to the app example `curl https://api.giphy.com/v1/gifs/search?q=morning\&api_key=APIKEY\&limit=1 -x localhost:8081`
+
 ### With Go env
 If `go` environment installed use this command
 `go run *.go` to run from the code 
@@ -82,7 +87,7 @@ $ curl https://api.giphy.com/v1/gifs/search?q=morning\&api_key=231\&limit=1 -v -
 curl: (56) Received HTTP code 400 from proxy after CONNECT
 ```
 
-### handle redirect
+### Handle redirect
 `$ curl -p --proxy 127.0.0.1:8081 https://google.com/search?q=hello`
 ```
 <HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
