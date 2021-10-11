@@ -90,7 +90,7 @@ $ curl https://api.giphy.com/v1/gifs/search?q=morning\&api_key=231\&limit=1 -v -
 curl: (56) Received HTTP code 400 from proxy after CONNECT
 ```
 
-Using heroku
+Using heroku, http connect is not supported on heroku https://devcenter.heroku.com/articles/http-routing#supported-http-methods
 
 ```
 $ curl https://api.giphy.com/v1/gifs/search?q=morning\&api_key=123\&limit=1 -v -x https://golangproxy.herokuapp.com
