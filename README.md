@@ -39,6 +39,9 @@ So prefared to use `CURL` for now
 
 ### Deploying to production
 For now I have trupple running this app to prod/staging env, all the requests fails with message like as nginx does not support http connect out of the box https://github.com/chobits/ngx_http_proxy_connect_module
+
+Using nginx
+
 ```
 $ curl https://api.giphy.com/v1/gifs/search?q=morning\&api_key=231\&limit=1 -v -x https://goproxy.eslam.me
 *   Trying 157.245.246.176:443...
@@ -85,6 +88,50 @@ $ curl https://api.giphy.com/v1/gifs/search?q=morning\&api_key=231\&limit=1 -v -
 * CONNECT phase completed!
 * Closing connection 0
 curl: (56) Received HTTP code 400 from proxy after CONNECT
+```
+
+Using heroku
+
+```
+$ curl https://api.giphy.com/v1/gifs/search?q=morning\&api_key=1fYKUz7KHLRa88bqR3CJeGIEXuPqNvCI\&limit=1 -v -x https://golangproxy.herokuapp.com
+*   Trying 54.83.6.65:443...
+* TCP_NODELAY set
+* Connected to golangproxy.herokuapp.com (54.83.6.65) port 443 (#0)
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+  CApath: /etc/ssl/certs
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server did not agree to a protocol
+* Proxy certificate:
+*  subject: CN=*.herokuapp.com
+*  start date: Jun  1 00:00:00 2021 GMT
+*  expire date: Jun 30 23:59:59 2022 GMT
+*  subjectAltName: host "golangproxy.herokuapp.com" matched cert's "*.herokuapp.com"
+*  issuer: C=US; O=Amazon; OU=Server CA 1B; CN=Amazon
+*  SSL certificate verify ok.
+* allocate connect buffer!
+* Establish HTTP proxy tunnel to api.giphy.com:443
+> CONNECT api.giphy.com:443 HTTP/1.1
+> Host: api.giphy.com:443
+> User-Agent: curl/7.68.0
+> Proxy-Connection: Keep-Alive
+> 
+* TLSv1.2 (IN), TLS alert, close notify (256):
+* Proxy CONNECT aborted
+* CONNECT phase completed!
+* Closing connection 0
+* TLSv1.2 (OUT), TLS alert, close notify (256):
+curl: (56) Proxy CONNECT aborted
 ```
 
 ### Handle redirect
